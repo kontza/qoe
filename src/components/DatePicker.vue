@@ -20,10 +20,15 @@
 import { ref } from 'vue'
 
 export default {
-  props: ['selectedDate'],
-  watch: {
-    selectedDate(newValue, oldValue) {
-      this.$emit('dateSelected', newValue)
+  props: ['modelValue'],
+  computed: {
+    selectedDate: {
+      get() {
+        return this.modelValue
+      },
+      set(newValue) {
+        this.$emit('update:modelValue', newValue)
+      }
     }
   }
 }

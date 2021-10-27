@@ -15,7 +15,7 @@
 
   <div class="row">
     <div class="col offset-4">
-      <DatePicker :selectedDate="selectedDate" @dateSelected="onDateSelected" />
+      <DatePicker v-model="selectedDate"/>
     </div>
   </div>
 </template>
